@@ -149,7 +149,8 @@ void TIM2_config(unsigned int prescaler_value,unsigned int arr_value){
 	//REF. Pagina 361 manuale "2 - STM32 F401xE Reference Manual"
 	TIM2->EGR |= TIM_EGR_UG_Msk;
 
-	//Azzeriamo il bit che ci segnala l'evento (è stato
+	//Azzeriamo il bit che ci segnala l'evento (è stato sollevato mediante l'istruzione precedente)
+	//REF Pagina 359 manuale "2 - STM32 F401xE Reference Manual"
 	TIM2->SR &= ~TIM_SR_UIF_Msk;
 
 	//(1)La moalità di conteggio si setta tramite il bit 4 del control register (CR1)
