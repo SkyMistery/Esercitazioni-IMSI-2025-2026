@@ -83,7 +83,7 @@ void led_pa5_config(){
 
 	//Inizializziamo il led come spento attraverso il valore che pilota il segnale sul PA5 nell' output register della GPIOA
 	//REF. Pagina 160 manuale "2 - STM32 F401xE Reference Manual"
-	GPIOA->ODR |= GPIO_ODR_OD5_Msk;
+	GPIOA->ODR &= ~GPIO_ODR_OD5_Msk;
 	return;
 }
 
