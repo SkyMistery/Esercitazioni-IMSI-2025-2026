@@ -1,3 +1,7 @@
+/*
+* Programma che accende il led su pressione del bottone e lo spegne allo scadere del timer
+* Entrambi gli eventi, pressione del bottone e scadere del timer generano interruzioni e sono servite da delle Interrupt service routine
+*/
 #include "main.h"
 
 //Questi due valori vannod efiniti a mano poiché non sono presenti nei file forniti
