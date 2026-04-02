@@ -124,10 +124,6 @@ void TIM2_config(unsigned int prescaler_value,unsigned int arr_value){
 	//REF. Pagina 353 manuale "2 - STM32 F401xE Reference Manual"
 	TIM2->CR1 |= TIM_CR1_OPM_Msk;
 
-	//Abilitiamo il bit che permette al TIM2 di generare interruzioni interne
-	//REF Pagina 358 manuale "2 - STM32 F401xE Reference Manual"
-	TIM2->DIER |= TIM_DIER_UIE_Msk;
-
 	//Impostiamo il precaler in modo da portare la frequenza da 16 Mhz (di default sul APB1) a 1 kHz (in questo caso)
 	//La frequenza di conteggio ottenuta sarà frequenza_di_clock/(prescaler_value+1)
 	//REF. Pag 368 manuale "2 - STM32 F401xE Reference Manual"
@@ -195,6 +191,7 @@ void interruption_config(void){
 	//Esempio, la NVIC_ISER_EXTI15_10_IR_EN è alla posizione 40 nella tabella, 40-32=8, si trova al bit 8 nel registro fisico
 	// REF Pagina 202 manuale "2 - STM32 F401xE Reference Manual"
 
+	return;
 }
 
 void EXTI15_10_IRQHandler (void){
